@@ -1,0 +1,13 @@
+{
+    "name": "@hyrious/license",
+    "version": "0.1.0",
+    "description": "get a license from github api",
+    "main": "index.js",
+    "bin": {
+        "license": "index.js"
+    },
+    "repository": "hyrious/license",
+    "author": "hyrious <hyrious@outlook.com>",
+    "license": "MIT",
+    "dependencies": {}
+}
