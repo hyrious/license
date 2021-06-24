@@ -1,8 +1,9 @@
 {
     "name": "@hyrious/license",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "get a license from github api",
     "main": "index.js",
+    "types": "index.d.ts",
     "bin": {
         "license": "index.js"
     },

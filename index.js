@@ -9,13 +9,16 @@ function httpGet(path, options = {}) {
     if (!cache) {
         if (fs.existsSync(cacheFile)) {
             try {
-                cache = fs.readFileSync(cacheFile, 'utf-8')
+                cache = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
             } catch {
                 fs.unlinkSync(cacheFile)
             }
         }
-        cache || (cache = {})
-    } else if (cache[path]) {
+        if (typeof cache !== "object") {
+            cache = {}
+        }
+    }
+    if (cache[path]) {
         return cache[path]
     }
 
@@ -27,7 +30,7 @@ function httpGet(path, options = {}) {
     if (options.token) {
         headers['Authorization'] = `token ${options.token}`
     }
-    return new Promise((resovle, reject) => {
+    return new Promise((resolve, reject) => {
         const req = request({
             hostname: 'api.github.com',
             path,
@@ -40,7 +43,7 @@ function httpGet(path, options = {}) {
                 const body = JSON.parse(chunks.join(''))
                 cache[path] = body
                 fs.writeFileSync(cacheFile, JSON.stringify(cache))
-                resovle(body)
+                resolve(body)
             })
         })
         req.on('error', reject)
