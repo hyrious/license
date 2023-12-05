@@ -1,10 +1,16 @@
-## license
+## @hyrious/license
 
-Get a license from github api.
+Generate LICENSE.txt from GitHub API.
 
-```shell-session
+```bash
 npx @hyrious/license
 ```
+
+### Changelog
+
+#### 0.2.0
+
+- Requires Node.js 20+ to use native `fetch()`.
 
 ### License (real)
 

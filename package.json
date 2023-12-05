@@ -1,14 +1,20 @@
 {
-    "name": "@hyrious/license",
-    "version": "0.1.1",
-    "description": "get a license from github api",
-    "main": "index.js",
-    "types": "index.d.ts",
-    "bin": {
-        "license": "index.js"
-    },
-    "repository": "hyrious/license",
-    "author": "hyrious <hyrious@outlook.com>",
-    "license": "MIT",
-    "dependencies": {}
+  "name": "@hyrious/license",
+  "version": "0.2.0",
+  "description": "Generate LICENSE.txt from GitHub API",
+  "repository": "hyrious/license",
+  "license": "MIT",
+  "author": "hyrious <hyrious@outlook.com>",
+  "type": "module",
+  "main": "license.js",
+  "types": "license.d.ts",
+  "bin": {
+    "license": "cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "20.x"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }
